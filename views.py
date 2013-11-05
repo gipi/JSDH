@@ -6,7 +6,7 @@ import random
 
 def index(request):
     """Homepage"""
-    
+    # the session_key is used as key to retrieve the secret exponent
     session_key = random.getrandbits(256)
     private_key = random.getrandbits(256)
     cache.set(session_key, private_key)

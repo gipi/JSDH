@@ -11,6 +11,14 @@ ADMINS = (
 
 # DH data
 P = 114454352258618336192858445991095376892568036802441830957445273627422796190483L
+# From wikipedia
+#  The order of G should have a large prime factor to prevent use
+#  of the Pohlig–Hellman algorithm to obtain a or b. For this reason,
+#  a Sophie Germain prime q is sometimes used to calculate p = 2q + 1,
+#  called a safe prime, since the order of G is then only divisible
+#  by 2 and q. g is then sometimes chosen to generate the order q
+#  subgroup of G, rather than G, so that the Legendre symbol of g^a
+#  never reveals the low order bit of a.
 G = 5
 
 MANAGERS = ADMINS
