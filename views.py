@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.core.cache import cache
-from django.views.generic.simple import direct_to_template
+from django.shortcuts import render_to_response
 
 import random
 
@@ -12,16 +12,13 @@ def index(request):
     cache.set(session_key, private_key)
     A = pow(settings.G, private_key, settings.P)
     print "session_key = %s\nprivate_key = %s\nA = %s" % (session_key, private_key, A)
-    response = direct_to_template(
-        request,
-        'index.html',
-        {   'p': settings.P,
+    return render_to_response(
+        'index.html', {
+            'p': settings.P,
             'g': settings.G,
             'A': A,
-            'session_key': session_key
-        }
-    )
-    return response
+            'session_key': session_key,
+    })
 
 def finish_dh(request):
     """Get B and compute K"""
@@ -31,11 +28,8 @@ def finish_dh(request):
     private_key = cache.get(session_key)
     K = pow(B, private_key, settings.P)
     print "password = %s\nsession_key = %s\nprivate_key = %s\nB = %s\nK = %s" % (ciphertext, session_key, private_key, B, K)
-    response = direct_to_template(
-        request,
-        'finished.html',
-        {   'K': K,
+    return render_to_response(
+        'finished.html', {
+            'K': K,
             'ciphertext': ciphertext,
-        }
-    )
-    return response
+    })
