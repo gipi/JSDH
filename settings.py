@@ -23,9 +23,6 @@ G = 5
 
 MANAGERS = ADMINS
 
-CACHE_BACKEND = 'memcached://10.135.2.132:11211;10.135.2.133:11211;10.135.2.134:11211;10.135.2.135:11211/'
-CACHE_MIDDLEWARE_KEY_PREFIX = 'jsdh:'
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
