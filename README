@@ -1,1 +1,29 @@
 Small example using Diffie-Hellman to establish a secure key and AES with that key to exchange the secure data.
+
+Diffie Hellman
+--------------
+
+In this key exchange the two users estabilish a shared secret
+in a secure manner also if someone is eavesdropping.
+
+In this Django example the two endpoints are the server
+and the javascript client side implementation: the server
+calculate the g and p parameters and communicate the
+A parameter with the web page embedding them in some
+javascript values.
+
+The web page a this point calculates its parameter, embed it
+in a hidden form field and when the user submit this to the
+server the negotiation is finished.
+
+Problem
+-------
+
+A know problem with DH is the fact that this negotiation is
+not authenticated, so is possible to be attacked with a MitM.
+
+Also the javascript and the web page could be substituited with
+tampered ones making unreliable using it for life threatening
+situation.
+
+DON'T USE THIS CODE, IS UNSECURE AS HELL!!!!1!!!!!!
