@@ -11,7 +11,7 @@
   <body>
     A public/private key pair is being generated
     <span id="dh_benchmark"> </span>
-      <form name="dh_form" method="post" action="{% url 'views.finish_dh' %}" onSubmit="return submit_form()">
+      <form name="dh_form" method="post" action="{% url 'dj_dh.views.finish' %}" onSubmit="return submit_form()">
         <input type="hidden" name="B" value="" />
         <input type="hidden" name="session_key" value="{{ session_key }}" />
         <input type="text" name="password" value="" />
