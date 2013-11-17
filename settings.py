@@ -63,6 +63,9 @@ MEDIA_URL = ''
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/admin_media/'
 
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), 'static'))
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '$4a3f7+j-k%o7vu!#!3d@#*o9^tkii9(-(ja4hknn*vcxg6)t1'
 
@@ -83,4 +86,6 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
 #    'django.contrib.sessions',
 #    'django.contrib.sites',
+    'django.contrib.staticfiles',
+    'dj_dh',
 )

@@ -1,9 +1,10 @@
+{% load static from staticfiles %}
 <html>
   <head>
     <title>
       Diffie-Hellman key exchange server side
     </title>
-    <script type="text/javascript" src="/media/aes.js"></script>
+    <script type="text/javascript" src="{% static "aes.js" %}"></script>
     <script type="text/javascript" src="http://js.sapo.pt/Prototype/"></script>
   </head>
   <body>
